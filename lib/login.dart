@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrapp/profiledata.dart';
 import 'package:qrapp/registration.dart';
 import 'package:qrapp/profile.dart';
 
@@ -60,14 +61,11 @@ class _LoginState extends State<Login> {
               width: 100,
               height: 30,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                  ),
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Profile(),
+                          builder: (context) => PrflView(),
                         ));
                   },
                   child: Text(

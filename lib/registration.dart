@@ -12,6 +12,7 @@ class _RegState extends State<Reg> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.deepOrangeAccent,
       body: Center(
         child: Column(
@@ -74,12 +75,9 @@ class _RegState extends State<Reg> {
               height: 30,
             ),
             Container(
-              width: 100,
+              width: 200,
               height: 30,
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                  ),
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Success(),));
                   },

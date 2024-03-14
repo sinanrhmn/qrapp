@@ -12,6 +12,7 @@ class _successState extends State<Success> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.white,
       body: Center(
         child: Column(
