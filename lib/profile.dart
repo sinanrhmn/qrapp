@@ -3,7 +3,9 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:qrapp/imageview.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+   Profile({Key? key,required this.rollno}) : super(key: key);
+
+  String rollno;
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -27,7 +29,7 @@ class _ProfileState extends State<Profile> {
               height: 50,
             ),
             QrImage(
-              data: '9778210540',
+              data: widget.rollno,
               version: QrVersions.auto,
               size: 200.0,
             ),

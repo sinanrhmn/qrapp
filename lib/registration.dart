@@ -18,10 +18,10 @@ class _RegState extends State<Reg> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   void Register() async {
-    print(name.text);
-    print(rollno.text);
-    print(email.text);
-    print(password.text);
+    // print(name.text);
+    // print(rollno.text);
+    // print(email.text);
+    // print(password.text);
     Uri uri = Uri.parse('https://scnner-web.onrender.com/api/register');
     var response = await http.post(uri,
         headers: <String, String>{
@@ -38,14 +38,16 @@ class _RegState extends State<Reg> {
     var data = jsonEncode(response.body);
     // print(data["message"]);
     if (response.statusCode == 200) {
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => Login(),
           ));
     } else {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('USER ALREADY EXIST')));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('USER ALREADY EXIST'),
+        behavior: SnackBarBehavior.floating,
+      ));
     }
   }
 
@@ -126,11 +128,11 @@ class _RegState extends State<Reg> {
                     setState(() {
                       Register();
                     });
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Login(),
-                        ));
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //       builder: (context) => Login(),
+                    //     ));
                   },
                   child: Text(
                     'Register',
